@@ -1,5 +1,5 @@
 import { Image, Text, View } from "react-native";
-import { useLocalSearchParams, useNavigation } from "expo-router";
+import { Redirect, useLocalSearchParams, useNavigation } from "expo-router";
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/data/functions/formatCurrency";
 import { Button } from "@/components/Button/Button";
@@ -11,17 +11,20 @@ export default function Product() {
   const { id } = useLocalSearchParams();
   const cardStore = useCardStore();
   const navigation = useNavigation();
-  const produtos = PRODUCTS.filter((item) => item.id === id)[0];
+  const produtos = PRODUCTS.find((item) => item.id === id);
 
   console.log(cardStore.products);
 
   function handleAddToCard(){
-    console.log('chamou')
-    cardStore.add(produtos)
-    navigation.goBack();
+    if(produtos){
+      cardStore.add(produtos)
+      navigation.goBack();
+    }
   }
 
-  //51
+  if(!produtos){
+    return <Redirect href="/"/>
+  }
 
   return (
     <View className="flex-1">
@@ -30,7 +33,11 @@ export default function Product() {
         className="w-full h-52"
         resizeMode="cover"
       />
+
       <View className="p-5 mt-8 flex-1">
+        <Text className="text-lime-400 text-2xl font-heading my-2">
+          {produtos.title}
+        </Text>
         <Text className="text-lime-400 text-2xl font-heading my-2">
           {formatCurrency(produtos.price)}
         </Text>

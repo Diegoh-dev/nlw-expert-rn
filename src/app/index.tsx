@@ -3,7 +3,7 @@ import { Header } from "@/components/Header/Header";
 import React, { useRef, useState } from "react";
 import { View, FlatList, SectionList, Text } from "react-native";
 
-import { CATEGORIES, MENU } from "@/utils/data/products";
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products";
 import { Product } from "@/components/Product/Product";
 import { Link } from "expo-router";
 import { useCardStore } from "@/store/cardStore";
@@ -11,7 +11,7 @@ import { useCardStore } from "@/store/cardStore";
 export default function Home() {
   const [category, setCategory] = useState(CATEGORIES[0]);
 
-  const sectionListRef = useRef<SectionList>(null);
+  const sectionListRef = useRef<SectionList<ProductProps>>(null);
   const cardStore = useCardStore();
 
   const cardQuantity = cardStore.products.reduce((total,produc) => total + produc.quantity,0)
