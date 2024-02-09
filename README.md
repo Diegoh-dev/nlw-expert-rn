@@ -3,38 +3,44 @@
 
 
 
-<img src="./src/assets/motograu.png" alt="Motograu">
+<img src="./assets/images/projeto.png" alt="app de pedido de lanches">
 
 # Explicação
 
-O projeto representa um desafio realizado pela Hypetech. A principal meta é aprimorar a interface do usuário, visando proporcionar uma experiência mais amigável e otimizada, tornando a aplicação mais envolvente para que os usuários possam desfrutar plenamente do jogo Motograu.
+O projeto representa um aplicativo de pedido de lanches. Onde o cliente vai poder escolher e enviar os pedidos e o seu endereço para o estabelecimento.
 
-# Página
+# Páginas
 
-O jogo possui uma página principal na qual diversos componentes passaram por aprimoramentos de design, conferindo-lhes uma interface mais amigável e seguindo padrões contemporâneos de design.
+O aplicativo oferece uma intuitiva experiência de navegação, apresentando uma página dedicada à lista de lanches e bebidas. Ao selecionar um lanche específico, o cliente é redirecionado para uma tela detalhada do produto. Nesse espaço, ele pode explorar informações cruciais como preço, descrição e ingredientes do lanche.
 
-Nessa página, é apresentada uma área onde o chat pode permanecer visível e ser facilmente alternado para visualizar as apostas e o histórico correspondente. Oferece também a funcionalidade de visualização do jogo em tempo real, campos de apostas e botões para acessar os registros históricos das partidas.
+Na mesma tela, o cliente tem a facilidade de adicionar o lanche ao carrinho ou retornar à lista de opções disponíveis, simplificando o processo de escolha.
+
+Além disso, o aplicativo conta com uma página exclusiva para o carrinho, proporcionando ao cliente uma visão clara da quantidade de cada item escolhido e o total da sua compra. Nesse estágio, é necessário fornecer o endereço de entrega do pedido, sendo que o cliente pode concluir o processo enviando o pedido diretamente para o WhatsApp do estabelecimento. Isso garante uma transição suave do processo de seleção de produtos para a finalização da compra, oferecendo praticidade e eficiência ao usuário.
 
 # Tecnologias
 
-- React
+- React Native
 - TailwindCss
-- Websocket
-
-
+- AsyncStorage 
+- Expo
+- React-native-safe-area-context
+- Zustand
+- Typescript
+- Vector-icons
+- React-navigation
 
 # Como usar?
 Antes de começar, você precisa ter o Git e o Node instalados.
 
 ```bash
 # Clone this project
-git clone https://github.com/Diegoh-dev/frontend-challenge.git
+git clone https://github.com/Diegoh-dev/nlw-expert-rn.git
 # access
-cd frontend-challenge
+cd nlw-expert-rn
 # install dependencies
- yarn or npm
+ npm
 # Run the project
-$ yarn dev 
+$ npm start 
 ```
     
 
